@@ -1,0 +1,52 @@
+* {
+    font-family: sans-serif;
+}
+
+header {
+    /* position: fixed; */
+    background-color: midnightblue;
+    color: white;
+    border-bottom: 5px lightblue solid;
+    border-radius: 15px 15px 0 0;
+    margin: auto;
+    padding: 1% 5%;
+    width: 60%;
+}
+
+main {
+    margin: auto;
+    width: 60%;
+}
+
+footer {
+    border-top: 2px midnightblue solid;
+    color: #aeaeae;
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+    width: 60%;
+}
+
+table {
+    width: 100%;
+}
+
+button {
+    background-color: midnightblue;
+    color: white;
+    height: 40px;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: rgb(37, 37, 165);
+}
+
+td > p {
+    color: midnightblue;
+    text-shadow: 1px 1px #aeaeae;
+}
+
+#curso, #resumen {
+    color: #aeaeae;
+}

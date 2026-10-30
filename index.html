@@ -23,30 +23,32 @@
                         </td>
                         <td>
                             <p>Destino</p>
-                            <input type="text" />
+                            <input type="text" id="destino" />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <p>Fecha de la excursión</p>
-                            <input type="text" />
+                            <input type="date" id="fecha" />
                         </td>
                         <td>
                             <p>Número de participantes</p>
-                            <input type="text" />
+                            <input type="text" id="participantes" />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <p>Precio de la entrada por persona (€)</p>
-                            <input type="text" />
+                            <input type="text" id="precio_entrada" />
                         </td>
                         <td>
                             <p>Precio de cada autobús (€)</p>
-                            <input type="text" />
+                            <input type="text" id="precio_autobus" />
                         </td>
                     </tr>
                 </table>
+                <br>
+                <button onclick="calcPresupuesto()">Calcular presupuesto</button>
             </form>
         </section>
         <section id="resultados">
