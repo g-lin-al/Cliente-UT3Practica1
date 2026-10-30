@@ -2,29 +2,30 @@
     font-family: sans-serif;
 }
 
+body {
+    background-color: whitesmoke;
+}
+
 header {
-    /* position: fixed; */
     background-color: midnightblue;
     color: white;
     border-bottom: 5px lightblue solid;
-    border-radius: 15px 15px 0 0;
+    border-radius: 10px 10px 0 0;
     margin: auto;
     padding: 1% 5%;
     width: 60%;
 }
 
-main {
-    margin: auto;
-    width: 60%;
-}
-
 footer {
     border-top: 2px midnightblue solid;
+    background-color: white;
     color: #aeaeae;
     text-align: center;
     margin: auto;
-    margin-top: 2%;
+    margin-top: 1%;
+    padding: 1% 5%;
     width: 60%;
+    border-radius: 0 0 10px 10px;
 }
 
 table {
@@ -38,6 +39,10 @@ button {
     border-radius: 10px;
 }
 
+h2 {
+    color: midnightblue;
+}
+
 button:hover {
     background-color: rgb(37, 37, 165);
 }
@@ -45,6 +50,23 @@ button:hover {
 td > p {
     color: midnightblue;
     text-shadow: 1px 1px #aeaeae;
+}
+
+#formulario {
+    background-color: white;
+    margin: 1% auto;
+    padding: 1% 5%;
+    width: 60%;
+    border-radius: 10px;
+}
+
+#section_info_nav {
+    font-size: 0.9em;
+    background-color: white;
+    margin: 1% auto;
+    padding: 1% 5%;
+    width: 60%;
+    border-radius: 10px;
 }
 
 #curso, #resumen {
