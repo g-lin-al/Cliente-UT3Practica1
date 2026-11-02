@@ -47,26 +47,19 @@ button:hover {
     background-color: rgb(37, 37, 165);
 }
 
-td > p {
-    color: midnightblue;
-    text-shadow: 1px 1px #aeaeae;
-}
-
-#formulario {
-    background-color: white;
-    margin: 1% auto;
-    padding: 1% 5%;
-    width: 60%;
-    border-radius: 10px;
-}
-
-#section_info_nav {
+#formulario, #section_info_nav, #section_resultados {
     font-size: 0.9em;
     background-color: white;
     margin: 1% auto;
     padding: 1% 5%;
     width: 60%;
     border-radius: 10px;
+}
+
+td > p {
+    font-size: 1rem;
+    color: midnightblue;
+    text-shadow: 1px 1px #aeaeae;
 }
 
 #curso, #resumen {

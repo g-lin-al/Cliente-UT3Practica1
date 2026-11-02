@@ -52,7 +52,7 @@
             </form>
         </section>
         <section id="section_resultados">
-            <!-- por hacer -->
+            <h2>Resumen de la excursión</h2>
         </section>
         <section id="section_info_nav">
             <h2>Información del navegador</h2>
@@ -63,34 +63,6 @@
         <p>&copy; G.L.A. 2026 (2º DAW)</p>
     </footer>
 
-    <script>
-        function recogerInfoNavegador() {
-            // Funcionalidades del formulario principal
-            let responsable = "", destino = "", fecha_excursion = new Date(), num_participantes = 0, precio_persona = 0, precio_bus = 0;
-            responsable = document.getElementById("responsable").value;
-            destino = document.getElementById("destino").value;
-            fecha_excursion = document.getElementById("fecha").value;
-            num_participantes = document.getElementById("participantes").value;
-            precio_persona = document.getElementById("precio_entrada").value;
-            precio_bus = document.getElementById("precio_autobus").value;
-
-            // Funcionalidades para la "Información del navegador"
-            let ventana = "", pantalla = "", conexion = "";
-            ventana = `${screen.width}px x ${screen.height}px`; // Funciones del objeto screen para recoger el ancho y alto de la ventana
-            pantalla = `${screen.availWidth}px x ${screen.availHeight}px`; // Funciones del objeto screen que recogen los datos de la pantalla en este caso
-            if (navigator.onLine) {
-                conexion = "Con conexión";
-            } else {
-                conexion = "Sin conexión";
-            }
-
-            document.getElementById("info_navegador").innerHTML = `Ventana: ${ventana}<br>
-            Pantalla: ${pantalla}<br>
-            Conexión: ${conexion}`;
-        }
-        
-        // Llamada de funciones que se ejecutan sin interacción
-        recogerInfoNavegador();
-    </script>
+    <script src="/script.js"></script>
 </body>
 </html>
