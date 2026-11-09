@@ -14,16 +14,16 @@
     </header>
     <main>
         <section id="formulario">
-            <form action="">
+            <div id="div_form">
                 <table>
                     <tr>
                         <td>
                             <p>Persona responsable</p>
-                            <input type="text" id="responsable" />
+                            <input type="text" id="responsable" placeholder="Obligatorio" />
                         </td>
                         <td>
                             <p>Destino</p>
-                            <input type="text" id="destino" />
+                            <input type="text" id="destino" placeholder="Obligatorio" />
                         </td>
                     </tr>
                     <tr>
@@ -33,26 +33,27 @@
                         </td>
                         <td>
                             <p>Número de participantes</p>
-                            <input type="text" id="participantes" />
+                            <input type="number" id="participantes" min="1" max="120" placeholder="Entre 1 y 120" />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <p>Precio de la entrada por persona (€)</p>
-                            <input type="text" id="precio_entrada" />
+                            <input type="number" id="precio_entrada" />
                         </td>
                         <td>
                             <p>Precio de cada autobús (€)</p>
-                            <input type="text" id="precio_autobus" />
+                            <input type="number" id="precio_autobus" />
                         </td>
                     </tr>
                 </table>
                 <br>
                 <button onclick="calcPresupuesto()">Calcular presupuesto</button>
-            </form>
+            </div>
         </section>
-        <section id="section_resultados">
+        <section id="section_resultados" hidden>
             <h2>Resumen de la excursión</h2>
+            <div id="tabla_resultados"></div>
         </section>
         <section id="section_info_nav">
             <h2>Información del navegador</h2>

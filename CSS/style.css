@@ -9,7 +9,7 @@ body {
 header {
     background-color: midnightblue;
     color: white;
-    border-bottom: 5px lightblue solid;
+    border-bottom: 5px rgb(223, 223, 227) solid;
     border-radius: 10px 10px 0 0;
     margin: auto;
     padding: 1% 5%;
@@ -36,6 +36,7 @@ button {
     background-color: midnightblue;
     color: white;
     height: 40px;
+    border: 1px solid black;
     border-radius: 10px;
 }
 
@@ -47,12 +48,33 @@ button:hover {
     background-color: rgb(37, 37, 165);
 }
 
+button:active {
+    background-color: rgb(14, 14, 63);
+}
+
+input {
+    height: 2rem;
+    min-width: 170px;
+    padding: 0 2%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+input:focus {
+    background-color: rgb(223, 223, 227);
+}
+
+input:invalid {
+    background-color: rgb(255, 73, 73);
+}
+
 #formulario, #section_info_nav, #section_resultados {
     font-size: 0.9em;
     background-color: white;
     margin: 1% auto;
     padding: 1% 5%;
     width: 60%;
+    border: 1px rgb(223, 223, 227) solid;
     border-radius: 10px;
 }
 

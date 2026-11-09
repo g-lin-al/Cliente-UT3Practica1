@@ -1,24 +1,75 @@
 function calcPresupuesto() {
     // Funcionalidades del formulario principal
-    let responsable = "", destino = "", fecha_excursion = new Date(), num_participantes = 0, precio_persona = 0, precio_bus = 0;
+    let fecha_actual = new Date(); // Con new Date() conseguimos la fecha en el momento de la ejecución
 
-    responsable = document.getElementById("responsable").value;
-    destino = document.getElementById("destino").value;
-    fecha_excursion = document.getElementById("fecha").value;
-    num_participantes = document.getElementById("participantes").value;
-    precio_persona = document.getElementById("precio_entrada").value;
-    precio_bus = document.getElementById("precio_autobus").value;
+    let responsable = document.getElementById("responsable").value;
+    let destino = document.getElementById("destino").value;
+    let fecha_excursion = document.getElementById("fecha").value;
+    let num_participantes = document.getElementById("participantes").value;
+    let precio_persona = document.getElementById("precio_entrada").value;
+    let precio_bus = document.getElementById("precio_autobus").value;
 
-    section_elemento = document.getElementById("section_resultados");
+    let section_elemento = document.getElementById("section_resultados");
 
+    if (responsable == "" || destino == "" || num_participantes < 1 || num_participantes > 120 || precio_persona < 0 || precio_bus < 0) {
+        alert("Error en los datos.");
+        section_elemento.hidden = true;
+    } else {
+        let autobuses_totales = Math.ceil(parseInt(num_participantes / 55));
+        let entradas_total = (parseInt(num_participantes) * parseInt(precio_persona)).toFixed(2);
+        let coste_total = (parseFloat(entradas_total) + parseFloat(precio_bus)).toFixed(2);
+        let coste_participante = (parseFloat(coste_total) / parseInt(num_participantes)).toFixed(2);
+
+        document.getElementById("tabla_resultados").innerHTML = `<p>Hola, ${responsable}. Este es el presupuesto para la excursión.</p>
+        <table>
+            <tr>
+                <td>Destino</td>
+                <td>${destino.toUpperCase()}</td>
+            </tr>
+            <tr>
+                <td>Fecha</td>
+                <td>${fecha_excursion.toDateString()}</td>
+            </tr>
+            <tr>
+                <td>Faltan</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Participantes</td>
+                <td>${num_participantes}</td>
+            </tr>
+            <tr>
+                <td>Autobuses</td>
+                <td>${autobuses_totales}</td>
+            </tr>
+            <tr>
+                <td>Entradas</td>
+                <td>${entradas_total}</td>
+            </tr>
+            <tr>
+                <td>Precio autobuses</td>
+                <td>${precio_bus}</td>
+            </tr>
+            <tr>
+                <td>Coste total</td>
+                <td>${coste_total}</td>
+            </tr>
+            <tr>
+                <td>Por participante</td>
+                <td>${coste_participante}</td>
+            </tr>
+        </table>`;
+
+        section_elemento.hidden = false;
+    }
 }
 
 function recogerInfoNavegador() {
     // Funcionalidades para la "Información del navegador"
     let ventana = "", pantalla = "", conexion = "";
 
-    ventana = `${screen.width}px x ${screen.height}px`; // Funciones del objeto screen para recoger el ancho y alto de la ventana
-    pantalla = `${screen.availWidth}px x ${screen.availHeight}px`; // Funciones del objeto screen que recogen los datos de la pantalla en este caso
+    ventana = `${screen.availWidth}px x ${screen.availHeight}px`; // Funciones del objeto screen para recoger el ancho y alto de la ventana
+    pantalla = `${screen.width}px x ${screen.height}px`; // Funciones del objeto screen que recogen los datos de la pantalla en este caso
     if (navigator.onLine) {
         conexion = "Con conexión";
     } else {
@@ -28,7 +79,7 @@ function recogerInfoNavegador() {
     document.getElementById("info_navegador").innerHTML = `Ventana: ${ventana}<br>
     Pantalla: ${pantalla}<br>
     Conexión: ${conexion}`;
-    
+
 }
         
 // Llamada de funciones que se ejecutan sin interacción
