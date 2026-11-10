@@ -9,7 +9,7 @@ body {
 header {
     background-color: midnightblue;
     color: white;
-    border-bottom: 5px rgb(223, 223, 227) solid;
+    border-bottom: 5px solid rgb(223, 223, 227);
     border-radius: 10px 10px 0 0;
     margin: auto;
     padding: 1% 5%;
@@ -86,4 +86,27 @@ td > p {
 
 #curso, #resumen {
     color: #aeaeae;
+}
+
+#tabla_resultados tr {
+    height: 2.5rem;
+}
+
+#tabla_resultados td {
+    border-bottom: 2px solid rgb(223, 223, 227);
+}
+
+#tabla_resultados td:nth-child(odd) {
+    font-weight: bold;
+    text-align: left;
+}
+
+#tabla_resultados td:nth-child(even) {
+    text-align: right;
+}
+
+#tabla_resultados tr:last-child {
+    font-size: 1rem;
+    color: midnightblue;
+    font-weight: bold;
 }
