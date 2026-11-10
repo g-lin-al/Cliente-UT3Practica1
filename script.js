@@ -4,18 +4,18 @@ function calcPresupuesto() {
 
     let responsable = document.getElementById("responsable").value;
     let destino = document.getElementById("destino").value;
-    let fecha_excursion = document.getElementById("fecha").value;
+    let fecha_excursion = new Date(document.getElementById("fecha").value);
     let num_participantes = document.getElementById("participantes").value;
     let precio_persona = document.getElementById("precio_entrada").value;
     let precio_bus = document.getElementById("precio_autobus").value;
 
     let section_elemento = document.getElementById("section_resultados");
 
-    if (responsable == "" || destino == "" || num_participantes < 1 || num_participantes > 120 || precio_persona < 0 || precio_bus < 0) {
+    if (responsable == "" || destino == "" || num_participantes < 1 || num_participantes > 120 || num_participantes == "" || precio_persona < 0 || precio_persona == "" || precio_bus < 0 || precio_bus == "" || fecha_excursion < fecha_actual || fecha_excursion == "") {
         alert("Error en los datos.");
         section_elemento.hidden = true;
     } else {
-        let autobuses_totales = Math.ceil(parseInt(num_participantes / 55));
+        let autobuses_totales = Math.ceil(num_participantes / 55);
         let entradas_total = (parseInt(num_participantes) * parseInt(precio_persona)).toFixed(2);
         let coste_total = (parseFloat(entradas_total) + parseFloat(precio_bus)).toFixed(2);
         let coste_participante = (parseFloat(coste_total) / parseInt(num_participantes)).toFixed(2);
@@ -68,8 +68,8 @@ function recogerInfoNavegador() {
     // Funcionalidades para la "Información del navegador"
     let ventana = "", pantalla = "", conexion = "";
 
-    ventana = `${screen.availWidth}px x ${screen.availHeight}px`; // Funciones del objeto screen para recoger el ancho y alto de la ventana
-    pantalla = `${screen.width}px x ${screen.height}px`; // Funciones del objeto screen que recogen los datos de la pantalla en este caso
+    ventana = `${screen.availWidth}px x ${screen.availHeight}px`; // Funciones del objeto screen para recoger el ancho y alto de la ventana sin las áreas reservadas del navegador
+    pantalla = `${screen.width}px x ${screen.height}px`; // Funciones del objeto screen que recogen los datos de la ventana general
     if (navigator.onLine) {
         conexion = "Con conexión";
     } else {
