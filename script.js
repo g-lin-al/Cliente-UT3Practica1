@@ -23,7 +23,7 @@ function calcPresupuesto() {
         let coste_total = parseFloat((entradas_total) + (precio_bus)).toFixed(2);
         let coste_participante = parseFloat((coste_total) / (num_participantes)).toFixed(2);
 
-        let dias_restantes = Math.round((fecha_excursion - fecha_actual) / ms_dia); // Días restantes hasta la excursión: se restan las fechas y se divide entre la cantidad de milisegundos de un día
+        let dias_restantes = Math.ceil((fecha_excursion - fecha_actual) / ms_dia); // Días restantes hasta la excursión: se restan las fechas y se divide entre la cantidad de milisegundos de un día
         let mes_excursion = "";
 
         // Utilizo el método getMonth para conseguir el número del mes de la excursión, de 0 a 11
@@ -108,6 +108,7 @@ function calcPresupuesto() {
         </table>`;
 
         section_elemento.hidden = false;
+        guardarLocal();
     }
 }
 
@@ -128,6 +129,15 @@ function recogerInfoNavegador() {
     Conexión: ${conexion}`;
 
 }
+
+function guardarLocal() {
+    // Uso las dos formas de guardar datos en localStorage
+    localStorage.setItem("local_particps", participantes.value);
+    localStorage.dest_resp = destino.value;
+}
         
 // Llamada de funciones que se ejecutan sin interacción
 recogerInfoNavegador();
+
+document.getElementById("participantes").value = localStorage.local_particps ?? "";
+document.getElementById("destino").value = localStorage.getItem("dest_resp") ?? "";
