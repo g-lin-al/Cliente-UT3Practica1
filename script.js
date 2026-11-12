@@ -71,7 +71,7 @@ function calcPresupuesto() {
         <table>
             <tr>
                 <td>Destino</td>
-                <td>${destino.toUpperCase()}</td>
+                <td>${destino.toUpperCase().trim()}</td>
             </tr>
             <tr>
                 <td>Fecha</td>
